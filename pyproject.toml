@@ -1,0 +1,28 @@
+[project]
+name = "nextmv-python-examples"
+version = "0.1.0"
+description = "Nextmv Python SDK の機能別サンプル"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "nextmv==1.12.0",
+  "ortools==9.15.6755",
+]
+
+[dependency-groups]
+dev = ["pytest==9.1.1", "ruff==0.17.2"]
+
+[tool.uv]
+package = false
+default-groups = ["dev"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = [".uv-cache", ".nextmv", "artifacts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

@@ -1,0 +1,28 @@
+type: python
+runtime: ghcr.io/nextmv-io/runtime/python:3.11
+python:
+  pip-requirements:
+    - nextmv==1.12.0
+files:
+  - main.py
+configuration:
+  content:
+    format: json
+  options:
+    strict: true
+    items:
+      - name: strategy
+        option_type: string
+        default: greedy
+        description: greedy または enumerate
+        required: false
+      - name: cost_scale
+        option_type: float
+        default: 1.0
+        description: 費用の倍率
+        required: false
+      - name: details
+        option_type: bool
+        default: true
+        description: 診断ログを出力する
+        required: false

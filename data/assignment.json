@@ -1,0 +1,5 @@
+{
+  "workers": ["aki", "ben", "chi"],
+  "tasks": ["pack", "ship", "check"],
+  "costs": [[9, 2, 7], [6, 4, 3], [5, 8, 1]]
+}
